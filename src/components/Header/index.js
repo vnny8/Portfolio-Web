@@ -57,12 +57,12 @@ export default function Header() {
 
             {/* Navegação (Agora sempre no centro) */}
             <nav className="hidden md:flex">
-              <ul className="flex items-center gap-8 ">
+              <ul className="flex items-center gap-4"> {/* Reduzi o gap para acomodar o padding */}
                 {navLinks.map((link) => (
-                  <li key={link.name} className="transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+                  <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="text-lg font-medium text-gray-200 hover:text-blue-600 transition-colors "
+                      className="block rounded-full border border-transparent px-4 py-2 text-lg font-medium text-white transition-all duration-300 transform hover:-translate-y-1 hover:bg-white/10 hover:text-white hover:border-white/20 hover:shadow-lg"
                     >
                       {link.name}
                     </Link>
