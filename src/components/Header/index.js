@@ -1,5 +1,3 @@
-// src/components/Header/index.js
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -44,8 +42,6 @@ export default function Header() {
     <div className="fixed top-0 left-0 right-0 z-50 pointer-events-none">
       <header className="container mx-auto max-w-6xl mt-8 mb-8 pointer-events-auto">
         <div className="rounded-full bg-gradient-to-r from-slate-500 via-slate-100 to-slate-500 p-[1.5px]">
-          {/* --- MUDANÇA PRINCIPAL AQUI --- */}
-          {/* Trocamos 'justify-between' por 'justify-center' e adicionamos 'relative' */}
           <div className="relative flex items-center justify-center bg-gray-900/80 backdrop-blur-xl rounded-full p-4">
             
             {/* Logo na Esquerda (Posicionado de forma absoluta) */}
@@ -55,9 +51,9 @@ export default function Header() {
               </Link>
             </div>
 
-            {/* Navegação (Agora sempre no centro) */}
+            {/* Navegação no Centro*/}
             <nav className="hidden md:flex">
-              <ul className="flex items-center gap-4"> {/* Reduzi o gap para acomodar o padding */}
+              <ul className="flex items-center gap-4">
                 {navLinks.map((link) => (
                   <li key={link.name}>
                     <Link
@@ -81,7 +77,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Painel do Menu Mobile (sem alterações) */}
+        {/* Painel do Menu Mobile */}
         <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
           <div className="mx-4 mt-2 p-5 bg-gray-900/80 backdrop-blur-xl rounded-2xl shadow-2xl">
             <nav>

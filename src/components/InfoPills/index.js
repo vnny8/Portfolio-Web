@@ -1,5 +1,3 @@
-// src/components/InfoPills/index.js
-
 // --- Ícones SVG para os Badges ---
 const LocationIcon = (props) => (
   <svg {...props} viewBox="0 0 20 20" fill="currentColor">
@@ -19,7 +17,7 @@ const CodeIcon = (props) => (
   </svg>
 );
 
-// --- COMPONENTE "PILL" CORRIGIDO ---
+// --- COMPONENTE "PILL" ---
 const Pill = ({ icon: Icon, text }) => (
   <div className="flex items-center gap-2 rounded-full border border-white/20 bg-[#293243] px-4 py-2 text-sm text-white transition-transform transform hover:-translate-y-1 hover:shadow-xl">
     <Icon className="h-5 w-5" />
