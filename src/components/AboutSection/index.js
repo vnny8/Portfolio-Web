@@ -23,7 +23,7 @@ export default function AboutSection({ age }) {
         }
         .animate-text-gradient {
           background-size: 200% auto;
-          animation: text-gradient-animation 4s linear infinite;
+          animation: text-gradient-animation 1.5s linear infinite;
         }
       `}</style>
 
@@ -65,10 +65,10 @@ export default function AboutSection({ age }) {
               Cursando Ciência da Computação. Desenvolvedor Full Stack com foco em criar experiências digitais incríveis e soluções robustas, do front-end ao back-end.
             </p>
 
-            <div className="group mt-4 inline-block rounded-lg p-px bg-gradient-to-r from-blue-500 via-purple-500 to-red-500 transition-transform transform hover:-translate-y-1 hover:shadow-xl">
+            <div className="group mt-4 inline-block rounded-lg p-px bg-gradient-to-r from-red-300 via-blue-700 to-red-300 transition-transform transform hover:-translate-y-1 hover:shadow-xl animate-text-gradient">
               <a 
                 href="/caminho/para/seu/curriculo.pdf" 
-                className="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white font-bold rounded-md"
+                className="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white font-bold rounded-md "
               >
                 <span>Ver Currículo</span>
                 <ArrowIcon className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />

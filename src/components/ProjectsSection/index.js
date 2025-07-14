@@ -75,29 +75,6 @@ export default function ProjectsSection() {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, [isDesktop]); // -> Roda o efeito quando 'isDesktop' muda
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.unobserve(entry.target);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
-
   const slidesToDisplay = isDesktop ? 2 : 1;
   const slidePercentage = 100 / slidesToDisplay;
 
@@ -117,9 +94,7 @@ export default function ProjectsSection() {
     <section
       ref={sectionRef}
       id="projetos"
-      className={`py-20 md:py-32 transition-all duration-1000 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-      }`}
+      className={`py-30 md:py-42`}
     >
       <div className="container mx-auto px-6">
         <h2 className="text-4xl font-black text-center mb-12">

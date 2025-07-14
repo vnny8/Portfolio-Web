@@ -1,6 +1,8 @@
 import Header from "@/components/Header";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
+import SkillsSection from "@/components/SkillsSection";
+import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 
 // --- Função para calcular a idade ---
 const calculateAge = (birthDateString) => {
@@ -18,21 +20,30 @@ const calculateAge = (birthDateString) => {
 
 
 export default function Home() {
-  // --- Lógica da idade sendo executada aqui ---
+  // --- Lógica da idade para se manter SEMPRE atualizada ---
   const birthDate = "31/03/2003";
   const age = calculateAge(birthDate);
 
   return (
-    // Definindo um fundo escuro para a página toda
+    // Fundo escuro para a página toda
     <div className="flex flex-col min-h-screen bg-[#051631] text-gray-200 font-[family-name:var(--font-geist-sans)]">
       <Header />
       
       <main className="flex-grow mt-15">
-        {/* Chamando o componente "Sobre" e passando a idade como propriedade */}
-        <AboutSection age={age} />
+        {/* Componente "Sobre" e idade como propriedade */}
+        <ScrollAnimationWrapper>
+          <AboutSection age={age} />
+        </ScrollAnimationWrapper>
 
-        {/* Chamando o novo componente "Projetos" */}
-        <ProjectsSection />
+        <ScrollAnimationWrapper>
+          {/* Componente "Projetos" */}
+          <ProjectsSection />
+        </ScrollAnimationWrapper>
+
+        <ScrollAnimationWrapper>
+          {/* Componente "Habilidades" */}
+          <SkillsSection />
+        </ScrollAnimationWrapper>
       </main>
     </div>
   );

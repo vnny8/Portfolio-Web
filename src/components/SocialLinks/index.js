@@ -1,4 +1,3 @@
-// src/components/SocialLinks/index.js
 import Link from 'next/link';
 
 // --- Ícones SVG ---
