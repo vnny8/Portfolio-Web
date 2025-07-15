@@ -1,5 +1,3 @@
-// src/components/Footer/index.js
-
 "use client";
 
 import { useState } from 'react';
@@ -73,11 +71,11 @@ export default function Footer() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
                     {/* Contato por E-mail */}
                     <div className="bg-gray-800/50 p-6 rounded-2xl flex items-center justify-between gap-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl">
-                        <div className="flex items-center gap-4 min-w-0"> {/* Adicionado min-w-0 para permitir que o container encolha */}
+                        <div className="flex items-center gap-4 min-w-0">
                             <MailIcon className="w-8 h-8 text-blue-400 flex-shrink-0" />
                             <div className="min-w-0">
                                 <h4 className="font-bold text-white">E-mail</h4>
-                                <p className="text-gray-400 text-sm truncate">{email}</p> {/* Adicionado truncate para cortar o texto */}
+                                <p className="text-gray-400 text-sm truncate">{email}</p>
                             </div>
                         </div>
                         <button onClick={() => handleCopy(email)} className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors flex-shrink-0">
@@ -87,11 +85,11 @@ export default function Footer() {
 
                     {/* Contato por LinkedIn */}
                     <div className="bg-gray-800/50 p-6 rounded-2xl flex items-center justify-between gap-4 transition-transform transform hover:-translate-y-1 hover:shadow-xl">
-                        <div className="flex items-center gap-4 min-w-0"> {/* Adicionado min-w-0 */}
+                        <div className="flex items-center gap-4 min-w-0">
                             <LinkedinIcon className="w-8 h-8 text-blue-400 flex-shrink-0" />
                             <div className="min-w-0">
                                 <h4 className="font-bold text-white">LinkedIn</h4>
-                                <p className="text-gray-400 text-sm truncate">Acesse a página -{'>'}</p> {/* Adicionado truncate */}
+                                <p className="text-gray-400 text-sm truncate">Acesse a página -{'>'}</p>
                             </div>
                         </div>
                         <Link href={linkedinProfileUrl} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full bg-gray-700 hover:bg-gray-600 transition-colors flex-shrink-0">

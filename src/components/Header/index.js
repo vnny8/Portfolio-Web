@@ -1,5 +1,3 @@
-// src/components/Header/index.js
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -77,7 +75,7 @@ export default function Header() {
               <ul className="flex items-center gap-4">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    {/* O onClick agora chama nossa função de rolagem */}
+                    {/* O onClick agora chama a função de rolagem */}
                     <a
                       href={link.href}
                       onClick={(e) => handleScroll(e, link.href)}

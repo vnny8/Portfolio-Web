@@ -45,6 +45,8 @@ export default function Home() {
           {/* Componente "Habilidades" */}
           <SkillsSection />
         </ScrollAnimationWrapper>
+
+        {/* Componente "Footer" */}
         <Footer /> 
       </main>
     </div>
