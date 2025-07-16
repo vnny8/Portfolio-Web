@@ -2,27 +2,30 @@
 
 export default function Logo() {
   return (
-    <svg 
-      width="40" 
-      height="40" 
-      viewBox="0 0 40 40" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path 
-        d="M15.4286 5.83331L5 19.9998L15.4286 34.1666" 
-        stroke="#2563eb" 
-        strokeWidth="5" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-      />
-      <path 
-        d="M24.5714 5.83331L35 19.9998L24.5714 34.1666" 
-        stroke="white" 
-        strokeWidth="5" 
-        strokeLinecap="round" 
-        strokeLinejoin="round"
-      />
-    </svg>
+    <>
+      {/* Estilos para a animação do gradiente */}
+      <style jsx global>{`
+        @keyframes text-gradient-animation {
+          to {
+            background-position: 200% center;
+          }
+        }
+        .animate-text-gradient {
+          background-size: 200% auto;
+          animation: text-gradient-animation 1.5s linear infinite;
+        }
+      `}</style>
+
+      {/* Círculo com borda de gradiente animada */}
+      <div className="rounded-full p-0.5 bg-gradient-to-r from-gray-100 via-gray-400 to-gray-100 animate-text-gradient">
+        <div className="rounded-full bg-[#051631]">
+          <div className="text-4xl font-black flex items-center justify-center w-10 h-10">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-400 to-gray-100 animate-text-gradient">
+              V
+            </span>
+          </div>
+        </div>
+      </div>
+    </>
   );
 }

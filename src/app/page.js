@@ -4,6 +4,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import SkillsSection from "@/components/SkillsSection";
 import ScrollAnimationWrapper from "@/components/ScrollAnimationWrapper";
 import Footer from "@/components/Footer";
+import ExperienceSection from "@/components/ExperienceSection";
 
 // --- Função para calcular a idade ---
 const calculateAge = (birthDateString) => {
@@ -36,14 +37,19 @@ export default function Home() {
           <AboutSection age={age} />
         </ScrollAnimationWrapper>
 
+        {/* Componente "Projetos" */}
         <ScrollAnimationWrapper>
-          {/* Componente "Projetos" */}
           <ProjectsSection />
         </ScrollAnimationWrapper>
 
+        {/* Componente "Habilidades" */}
         <ScrollAnimationWrapper>
-          {/* Componente "Habilidades" */}
           <SkillsSection />
+        </ScrollAnimationWrapper>
+
+        {/* Componente "Experiência de Trabalho" */}
+        <ScrollAnimationWrapper>
+          <ExperienceSection />
         </ScrollAnimationWrapper>
 
         {/* Componente "Footer" */}
