@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from 'next/link';
 import Logo from '@/components/Logo';
 
 // --- Ícones para o Menu Mobile ---
@@ -41,17 +40,17 @@ export default function Header() {
 
   // --- FUNÇÃO PARA ROLAGEM SUAVE ---
   const handleScroll = (e, targetId) => {
-    e.preventDefault(); // Previne o comportamento padrão de "pulo" do link.
+    e.preventDefault();
     const targetElement = document.querySelector(targetId);
 
     if (targetElement) {
-      const headerOffset = 150; // Espaço para compensar a altura do header fixo. Ajuste se necessário.
+      const headerOffset = 150;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
       window.scrollTo({
         top: offsetPosition,
-        behavior: "smooth" // A mágica da rolagem suave!
+        behavior: "smooth"
       });
 
       // Fecha o menu mobile após clicar em um link
@@ -65,17 +64,15 @@ export default function Header() {
         <div className="rounded-full bg-gradient-to-r from-slate-500 via-slate-100 to-slate-500 p-[1.5px]">
           <div className="relative flex items-center justify-center bg-gray-900/80 backdrop-blur-xl rounded-full p-4">
             
-            <div className="absolute left-4 top-1/2 -translate-y-1/2">
-              <Link href="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-                <Logo />
-              </Link>
+            <div className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 scale-60 md:scale-100 transition-transform select-none">
+              <Logo />
             </div>
 
             <nav className="hidden md:flex">
               <ul className="flex items-center gap-4">
                 {navLinks.map((link) => (
                   <li key={link.name}>
-                    {/* O onClick agora chama a função de rolagem */}
+                    {/* O onClick chama a função de rolagem */}
                     <a
                       href={link.href}
                       onClick={(e) => handleScroll(e, link.href)}

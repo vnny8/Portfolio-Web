@@ -1,5 +1,3 @@
-// src/components/Logo/index.js
-
 export default function Logo() {
   return (
     <>

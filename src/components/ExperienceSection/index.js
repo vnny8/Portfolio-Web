@@ -1,5 +1,3 @@
-// src/components/ExperienceSection/index.js
-
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
@@ -48,7 +46,7 @@ export default function ExperienceSection() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768); // md breakpoint
+      setIsMobile(window.innerWidth < 768); 
     };
     checkScreenSize();
     window.addEventListener('resize', checkScreenSize);
@@ -57,8 +55,6 @@ export default function ExperienceSection() {
 
   const scroll = (direction) => {
     if (carouselRef.current) {
-      // No mobile, rola exatamente a largura de um card (100% da tela)
-      // No desktop, mantém o scroll livre
       const scrollAmount = carouselRef.current.querySelector('div').offsetWidth;
       carouselRef.current.scrollBy({
         left: direction === 'left' ? -scrollAmount : scrollAmount,
@@ -82,8 +78,6 @@ export default function ExperienceSection() {
           
           <div
             ref={carouselRef}
-            // A classe 'no-scrollbar' é adicionada para esconder a barra de rolagem
-            // A classe 'md:overflow-x-auto' restaura o scroll no desktop
             className="flex items-stretch gap-8 overflow-x-auto pb-8 px-4 md:px-12 snap-x snap-mandatory no-scrollbar"
           >
             {/* Linha do Tempo Horizontal "Smooth" */}
