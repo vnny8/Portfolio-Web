@@ -1,0 +1,38 @@
+# Nome do seu workflow, aparecerá na aba "Actions" do GitHub
+name: CI/CD - Build e Push para Docker Hub
+
+# Gatilho: Este workflow roda sempre que houver um push na branch 'main'
+on:
+  push:
+    branches: [ "main" ]
+
+# Tarefas a serem executadas
+jobs:
+  # Nome da tarefa
+  build-and-push:
+    # A máquina virtual que vai rodar a tarefa
+    runs-on: ubuntu-latest
+
+    # Passos da tarefa
+    steps:
+      # 1. Clona o seu repositório para dentro da máquina virtual
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      # 2. Faz o login no Docker Hub
+      # Ele usa os segredos que vamos configurar no GitHub
+      - name: Login no Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      # 3. Constrói a imagem Docker e envia para o Docker Hub
+      - name: Build e Push da imagem Docker
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          # Define que a imagem deve ser enviada para o repositório
+          push: true
+          # A tag da imagem. Ex: vnny8/meu-portfolio:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
