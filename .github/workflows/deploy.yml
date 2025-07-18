@@ -29,23 +29,18 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
 
   # Tarefa 2: Fazer o deploy no servidor
-  # Esta tarefa só roda se a 'build-and-push' for bem-sucedida
   deploy:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      - name: Configurar chave SSH
-        uses: webfactory/ssh-agent@v0.5.0
-        with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-
       - name: Executar comandos de deploy no servidor
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SERVER_HOST }}
           username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }} # -> A chave é passada diretamente aqui
           script: |
-            # --- ADICIONADO: Login no Docker Hub dentro do servidor 
+            # Login no Docker Hub dentro do servidor
             echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
             
             # Puxa a imagem mais recente do Docker Hub
