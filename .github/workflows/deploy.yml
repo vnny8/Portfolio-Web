@@ -47,8 +47,8 @@ jobs:
             docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
             
             # Para e remove o container antigo, se ele existir
-            docker stop portfolio || true
-            docker rm portfolio || true
+            docker stop portfolio-web || true
+            docker rm portfolio-web || true
             
             # Roda o novo container com a imagem atualizada
             docker run -d --name portfolio-web --network npm-network --restart unless-stopped ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
