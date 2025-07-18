@@ -51,4 +51,4 @@ jobs:
             docker rm portfolio || true
             
             # Roda o novo container com a imagem atualizada
-            docker run -d -p 80:3000 --name portfolio ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
+            docker run -d --name portfolio-web --network npm-network --restart unless-stopped ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
