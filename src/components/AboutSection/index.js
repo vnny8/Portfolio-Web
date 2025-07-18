@@ -69,6 +69,8 @@ export default function AboutSection({ age }) {
               <a 
                 href="https://drive.google.com/file/d/1ZbNlB4VIpT8c0AgpnsJGWTAA--Rj1cpw/view?usp=sharing" 
                 className="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white font-bold rounded-md "
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <span>Ver Currículo</span>
                 <ArrowIcon className="w-5 h-5 transition-transform group-hover:translate-x-1.5" />

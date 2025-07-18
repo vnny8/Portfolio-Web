@@ -15,8 +15,8 @@ const LinkedinIcon = (props) => (
 
 export default function SocialLinks() {
   const socialLinks = [
-    { name: 'GitHub', icon: GithubIcon, url: 'https://github.com/seu-usuario' },
-    { name: 'LinkedIn', icon: LinkedinIcon, url: 'https://linkedin.com/in/seu-usuario' },
+    { name: 'GitHub', icon: GithubIcon, url: 'https://github.com/vnny8' },
+    { name: 'LinkedIn', icon: LinkedinIcon, url: 'https://www.linkedin.com/in/vinicius-vieira-2918a1236/' },
   ];
 
   return (
@@ -29,7 +29,6 @@ export default function SocialLinks() {
             href={social.url}
             target="_blank"
             rel="noopener noreferrer"
-            // --- CLASSES ATUALIZADAS AQUI ---
             className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-white font-semibold transition-all transform hover:-translate-y-1 hover:shadow-md hover:border-blue-500 hover:text-blue-600"
           >
             <Icon className="h-6 w-6"/>
