@@ -33,7 +33,7 @@ const LinkedinIcon = (props) => (
 const projects = [
   {
     title: 'Portfolio Pessoal',
-    description: 'Este é o meu portfolio pessoal, desenvolvido com Next.js e Tailwind CSS para demonstrar minhas habilidades e projetos. Possui Design responsivo e interativo.',
+    description: 'Este é o meu portfolio pessoal, desenvolvido com ReactJs, Next.js e Tailwind CSS para demonstrar minhas habilidades e projetos. Possui Design responsivo e interativo.',
     image: '/PortfolioWeb.png',
     linkedin: '#',
     gradientVia: 'via-red-700',
