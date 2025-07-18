@@ -1,38 +1,59 @@
-# Nome do seu workflow, aparecerá na aba "Actions" do GitHub
-name: CI/CD - Build e Push para Docker Hub
+# Nome do seu workflow
+name: CI/CD - Build e Deploy do Portfólio
 
-# Gatilho: Este workflow roda sempre que houver um push na branch 'main'
+# Gatilho: Roda em push na branch 'main'
 on:
   push:
     branches: [ "main" ]
 
 # Tarefas a serem executadas
 jobs:
-  # Nome da tarefa
+  # Tarefa 1: Construir e enviar a imagem para o Docker Hub
   build-and-push:
-    # A máquina virtual que vai rodar a tarefa
     runs-on: ubuntu-latest
-
-    # Passos da tarefa
     steps:
-      # 1. Clona o seu repositório para dentro da máquina virtual
       - name: Checkout do código
         uses: actions/checkout@v3
 
-      # 2. Faz o login no Docker Hub
-      # Ele usa os segredos que vamos configurar no GitHub
       - name: Login no Docker Hub
         uses: docker/login-action@v2
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      # 3. Constrói a imagem Docker e envia para o Docker Hub
       - name: Build e Push da imagem Docker
         uses: docker/build-push-action@v4
         with:
           context: .
-          # Define que a imagem deve ser enviada para o repositório
           push: true
-          # A tag da imagem. Ex: vnny8/meu-portfolio:latest
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
+
+  # Tarefa 2: Fazer o deploy no servidor
+  # Esta tarefa só roda se a 'build-and-push' for bem-sucedida
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - name: Configurar chave SSH
+        uses: webfactory/ssh-agent@v0.5.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      - name: Executar comandos de deploy no servidor
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          script: |
+            # --- ADICIONADO: Login no Docker Hub dentro do servidor 
+            echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+            
+            # Puxa a imagem mais recente do Docker Hub
+            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
+            
+            # Para e remove o container antigo, se ele existir
+            docker stop portfolio || true
+            docker rm portfolio || true
+            
+            # Roda o novo container com a imagem atualizada
+            docker run -d -p 80:3000 --name portfolio ${{ secrets.DOCKERHUB_USERNAME }}/portfolio-web:latest
