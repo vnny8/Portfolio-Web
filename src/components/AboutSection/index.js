@@ -48,7 +48,7 @@ export default function AboutSection({ age }) {
               <InfoPills age={age} />
               <SocialLinks />
             </div>
-          </div>
+          </div> 
 
           {/* --- Coluna da Direita (TEXTO) --- */}
           <div className="flex flex-col items-start gap-6">
@@ -67,7 +67,7 @@ export default function AboutSection({ age }) {
 
             <div className="group mt-4 inline-block rounded-lg p-px bg-gradient-to-r from-red-300 via-blue-700 to-red-300 transition-transform transform hover:-translate-y-1 hover:shadow-xl animate-text-gradient">
               <a 
-                href="/caminho/para/seu/curriculo.pdf" 
+                href="https://drive.google.com/file/d/1ZbNlB4VIpT8c0AgpnsJGWTAA--Rj1cpw/view?usp=sharing" 
                 className="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white font-bold rounded-md "
               >
                 <span>Ver Currículo</span>
