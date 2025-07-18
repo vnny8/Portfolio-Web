@@ -54,7 +54,7 @@ export default function AboutSection({ age }) {
           <div className="flex flex-col items-start gap-6">
             <h1 className="text-5xl md:text-7xl font-black">
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-400 to-gray-100 animate-text-gradient">
-                Vinícius Vieira D
+                Vinícius Vieira
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-blue-700 to-red-300 animate-text-gradient">
                 Full Stack Developer
