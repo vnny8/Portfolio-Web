@@ -86,9 +86,9 @@ Este processo garante que qualquer atualização no código seja refletida em pr
 ![FooterPC](/docs/images/PC5.png)
 
 📌 **Versão para Celular:**<br>
-<img src="/docs/images/Celular1.jpeg" width="333"> <img src="/docs/images/Celular2.jpeg" width="333"> <img src="/docs/images/Celular3.jpeg" width="333">
+<img src="/docs/images/Celular1.jpeg" width="250"> <img src="/docs/images/Celular2.jpeg" width="250"> <img src="/docs/images/Celular3.jpeg" width="250">
 <br>
-<img src="/docs/images/Celular4.jpeg" width="333"> <img src="/docs/images/Celular5.jpeg" width="333"> <img src="/docs/images/Celular6.jpeg" width="333">
+<img src="/docs/images/Celular4.jpeg" width="250"> <img src="/docs/images/Celular5.jpeg" width="250"> <img src="/docs/images/Celular6.jpeg" width="250">
 
 ---
 
