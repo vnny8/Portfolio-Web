@@ -35,7 +35,7 @@ const projects = [
     title: 'Portfolio Pessoal',
     description: 'Este é o meu portfolio pessoal, desenvolvido com ReactJs, Next.js e Tailwind CSS para demonstrar minhas habilidades e projetos. Possui Design responsivo e interativo.',
     image: '/PortfolioWeb.png',
-    linkedin: '#',
+    linkedin: 'https://www.linkedin.com/feed/update/urn:li:activity:7352744824237625346/',
     gradientVia: 'via-red-700',
     githubLinks: [
       { label: 'Repositório', url: 'https://github.com/vnny8/Portfolio-Web' }
