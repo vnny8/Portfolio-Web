@@ -82,7 +82,7 @@ export default function AboutSection({ age }) {
 
             <div className="group mt-4 inline-block rounded-lg p-px bg-gradient-to-r from-red-300 via-blue-700 to-red-300 transition-transform transform hover:-translate-y-1 hover:shadow-xl animate-text-gradient">
               <a
-                href="https://drive.google.com/file/d/1ZbNlB4VIpT8c0AgpnsJGWTAA--Rj1cpw/view?usp=sharing"
+                href="https://drive.google.com/file/d/1QX_u5qbN0Wf8B1FJzGweZKxHQwAi6PvF/view?usp=sharing"
                 className="flex items-center gap-3 px-6 py-3 bg-gray-900 text-white font-bold rounded-md "
                 target="_blank"
                 rel="noopener noreferrer"

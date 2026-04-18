@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from "next/link";
 
 // --- Ícones SVG ---
 const GithubIcon = (props) => (
@@ -15,8 +15,12 @@ const LinkedinIcon = (props) => (
 
 export default function SocialLinks() {
   const socialLinks = [
-    { name: 'GitHub', icon: GithubIcon, url: 'https://github.com/vnny8' },
-    { name: 'LinkedIn', icon: LinkedinIcon, url: 'https://www.linkedin.com/in/vinicius-vieira-2918a1236/' },
+    { name: "GitHub", icon: GithubIcon, url: "https://github.com/vnny8" },
+    {
+      name: "LinkedIn",
+      icon: LinkedinIcon,
+      url: "https://www.linkedin.com/in/vinicius-padilha-vieira/",
+    },
   ];
 
   return (
@@ -31,7 +35,7 @@ export default function SocialLinks() {
             rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full border border-gray-300 px-4 py-2 text-white font-semibold transition-all transform hover:-translate-y-1 hover:shadow-md hover:border-blue-500 hover:text-blue-600"
           >
-            <Icon className="h-6 w-6"/>
+            <Icon className="h-6 w-6" />
             <span>{social.name}</span>
           </Link>
         );
