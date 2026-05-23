@@ -56,7 +56,7 @@ const experiences = [
   },
   {
     company: "Optimus Investimentos",
-    date: "Maio 2024 - Julho 2025",
+    date: "Maio 2024 - Agosto 2025",
     title: "Desenvolvedor Full Stack (Estágio)",
     description:
       "Desenvolvimento full-stack englobando todo o ciclo de vida da aplicação, com criação de APIs RESTful robustas em Java e Spring Boot. Construção de interfaces dinâmicas e reativas para o site principal utilizando React.js, Material-UI (MUI), hooks e roteamento. Criação de micro-serviços e automações em Python com Flask, implementando rotinas de web scraping e integração com APIs externas, além do deploy de infraestrutura na AWS.",
@@ -64,7 +64,7 @@ const experiences = [
   },
   {
     company: "InfoCorp - Empresa Júnior do Instituto de Computação (UFMT)",
-    date: "Novembro 2023 - Julho 2025",
+    date: "Novembro 2023 - Agosto 2025",
     title: "Desenvolvedor Back-End",
     description:
       'Desenvolvimento de soluções Back-End escaláveis utilizando o framework Java Spring Boot para a criação e manutenção do site principal da Empresa Júnior (EJ) e da plataforma de eventos "seuEvento". Atuação direta na modelagem estrutural e persistência de dados utilizando JPA e Hibernate, implementando mecanismos de segurança, proteção de dados e controle de acesso com Spring Security.',
