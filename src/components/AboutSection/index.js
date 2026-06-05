@@ -67,17 +67,18 @@ export default function AboutSection({ age }) {
           <div className="flex flex-col items-start gap-6">
             <h1 className="text-5xl md:text-7xl font-black">
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-gray-400 to-gray-100 animate-text-gradient">
-                Vinícius Vieiraa
+                Vinícius Vieira
               </span>
               <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-300 via-blue-700 to-red-300 animate-text-gradient">
                 Full Stack Developer
               </span>
             </h1>
 
-            <p className="text-lg text-gray-300 max-w-lg leading-relaxed font-medium">
-              Cursando Ciência da Computação. Desenvolvedor Full Stack com foco
-              em criar experiências digitais incríveis e soluções robustas, do
-              front-end ao back-end.
+            <p className="text-lg text-gray-300 max-w-xl leading-relaxed font-medium">
+              Bacharel em Ciência da Computação. Desenvolvedor Full Stack focado
+              em construir aplicações modernas, performáticas e escaláveis, com
+              código limpo e atenção à experiência do usuário. Atuação completa
+              tanto em back-end quanto em front-end.
             </p>
 
             <div className="group mt-4 inline-block rounded-lg p-px bg-gradient-to-r from-red-300 via-blue-700 to-red-300 transition-transform transform hover:-translate-y-1 hover:shadow-xl animate-text-gradient">
